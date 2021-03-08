@@ -14,17 +14,17 @@ export class AngularFirestore {
   constructor() {
     if (!environment.production) {
       this.firestore = new Firestore({
-        projectId: 'digicloud-ssr-template',
+        projectId: 'groza-260013',
         keyFilename: './src/environments/firestore.json'
       });
     } else  {
       this.firestore = new Firestore({
-        projectId: 'digicloud-ssr-template',
+        projectId: 'groza-260013',
         keyFilename: './src/environments/firestore.json'
       });
     }
     this.userCollection = this.firestore.collection('users');
-    console.log('firestore initialised');
+    //console.log('firestore initialised' + Promise.all([this.userCollection.listDocuments()]));
   }
 
   async collection<T>(name: string): Promise<T[]>{
