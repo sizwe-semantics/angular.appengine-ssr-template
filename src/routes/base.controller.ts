@@ -1,11 +1,11 @@
 import * as express from 'express';
-
-export default class BaseController {
+import {AngularFirestore} from "../providers/angular.firestore";
+export class BaseController extends  AngularFirestore {
 
     public router = express.Router();
 
     constructor() {
-        
+        super();
     }
 
 }
