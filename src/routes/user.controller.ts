@@ -1,11 +1,12 @@
 import * as express from 'express';
 import {User} from '../model/user';
 import {AngularFirestore} from "../providers/angular.firestore";
+import BaseController from './base.controller';
 
-export default class UserController extends AngularFirestore{
+export default class UserController extends AngularFirestore, BaseController{
   public routerPath = '/api/users/';
   private dbPath = 'users';
-  public router = express.Router();
+
 
   constructor() {
     super();
